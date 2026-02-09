@@ -14,15 +14,26 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="text-center" id="title">Welcome to Javascript!</h1>
-                <p class="text-center">What is Javascript? its a scripting language that can be used in front end and backend</p>
+                <p class="text-center">What is Javascript? its a scripting language that can be used in front end and
+                    backend</p>
             </div>
         </div>
         <div class="row text-center">
             <div class="col-lg-12">
                 <h2 id="productName">Tshirt</h2>
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/226/407/small/646.jpg" alt="" class="rounded">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/226/407/small/646.jpg" alt=""
+                    class="rounded">
                 <p id="productPrice">Rp. 20000</p>
                 <p id="productStock">10 pcs</p>
+                <h3>Count form</h3>
+                <div class="mb-3">
+                    <input type="number" class="form-control" name="qty" id="qty" aria-describedby="helpId"
+                        placeholder="Input how much you wanna buy" />
+                    <button class="btn btn-success mt-2 text-white" onclick="countTotalPay()">Total bayar</button>
+                    <p id="totalBuy">Total Buy : 0</p>
+                    <p id="totalPay">Total Pay : 0</p>
+                </div>
+
                 <button type="button" class="btn btn-primary" id="buyButton">Buy</button>
             </div>
         </div>
@@ -36,8 +47,10 @@
         // for example lets get the product and update the product name from javascript
         let price = 21000
         let stock = 25
-        let productNameComponent = document.getElementById("productName") // this is accessing the id of h2 id -> productName
-        productNameComponent.textContent = "Black T-Shirt" // now inside the h2 id productName will change with this textContent
+        let productNameComponent = document.getElementById(
+            "productName") // this is accessing the id of h2 id -> productName
+        productNameComponent.textContent =
+            "Black T-Shirt" // now inside the h2 id productName will change with this textContent
         let productPriceComponent = document.getElementById("productPrice")
         productPriceComponent.textContent = `Rp.${price}`
         let productStockComponent = document.getElementById("productStock")
@@ -46,11 +59,30 @@
         // get the button component
         const buyButtonComponent = document.getElementById("buyButton")
         // anyway this is using arrow function instead of writing it inside component
-        buyButtonComponent.onclick=()=>{
+        buyButtonComponent.onclick = () => {
             stock--
             // after decrement the stock , update the stock in ui
             productStockComponent.textContent = `Stock : ${stock}`
             console.log(`Current stock ${stock}`)
+        }
+        qtyInput = document.getElementById("qty")
+        totalBuyComponent = document.getElementById("totalBuy")
+        totalPayComponent = document.getElementById("totalPay")
+        // function
+        function countTotalPay() {
+            qty = qtyInput.value
+            
+            if(qty > stock) {
+                alert("Not enough stock!")
+                return
+            }
+            console.log(`Qty Input ${qty}`)
+            totalBuyComponent.textContent = `Total Buy : ${qty}`
+            totalPay = qty * price
+            totalPayComponent.textContent = `Total Pay : ${totalPay}`
+            // reduce stock
+            newStock = stock - qty
+            productStockComponent.textContent = `Stock : ${newStock}`
         }
     </script>
 </body>
