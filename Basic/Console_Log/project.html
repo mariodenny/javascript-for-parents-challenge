@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Day 1 basic of Javascript</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -14,7 +14,16 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="text-center" id="title">Welcome to Javascript!</h1>
-                <p>What is Javascript? its a scripting language that can be used in f</p>
+                <p class="text-center">What is Javascript? its a scripting language that can be used in front end and backend</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h2 id="productName">Tshirt</h2>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/226/407/small/646.jpg" alt="" class="rounded">
+                <p id="productPrice">Rp. 20000</p>
+                <p id="productStock">10 pcs</p>
+                <button type="button" class="btn btn-primary" id="buyButton">Buy</button>
             </div>
         </div>
     </div>
@@ -23,8 +32,26 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     <script>
-     
-
+        // using dom manipulation lets access the document
+        // for example lets get the product and update the product name from javascript
+        let price = 21000
+        let stock = 25
+        let productNameComponent = document.getElementById("productName") // this is accessing the id of h2 id -> productName
+        productNameComponent.textContent = "Black T-Shirt" // now inside the h2 id productName will change with this textContent
+        let productPriceComponent = document.getElementById("productPrice")
+        productPriceComponent.textContent = `Rp.${price}`
+        let productStockComponent = document.getElementById("productStock")
+        productStockComponent.textContent = `Stock : ${stock}`
+        // lets learn about onclick -> onclick is event when we click the component
+        // get the button component
+        const buyButtonComponent = document.getElementById("buyButton")
+        // anyway this is using arrow function instead of writing it inside component
+        buyButtonComponent.onclick=()=>{
+            stock--
+            // after decrement the stock , update the stock in ui
+            productStockComponent.textContent = `Stock : ${stock}`
+            console.log(`Current stock ${stock}`)
+        }
     </script>
 </body>
 
