@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Conditional Statement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-5 mt-2">
+                <h1 class="text-center">If Statement</h1>
+                <p>Understand in Javascript we can also do logical checking using if else if else</p>
+                <div class="mb-3">
+                    <label for="timeInput" class="form-label">Input time</label>
+                    <input type="text" class="form-control" name="timeInput" id="timeInput" aria-describedby="helpId"
+                        placeholder="" />
+                    <small id="helpId" class="form-text text-muted">Input the time from 1 - 24 that will result in good
+                        morning, good afternon, good night</small>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info w-100 text-white" id="sayButton" onclick="sayTimes()">Say!</button>
+                </div>
+                <div class="mb-3 text-center">
+                    <h3 id="result"></h3>
+                </div>
+                <div class="mb-3 mt-2">
+                    <h1 class="text-center mb-2">Movie list of the week</h1>
+                </div>
+                <div class="mb-3">
+                    <ul>
+                        <li>Mission Impossible : Ghost Protocol</li>
+                        <li>Shadow of The tomb rider</li>
+                        <li>Resident Evil 7 : Final Chapter</li>
+                    </ul>
+                </div>
+                <div class="mb-3">
+                    <label for="ageInput" class="form-label">Check age</label>
+                    <input type="text" class="form-control" name="ageInput" id="ageInput" aria-describedby="helpId"
+                        placeholder="Check your age before buy the ticket" />
+                    <small id="helpId" class="form-text text-muted">Input your age to check if you're eligible to watch
+                        these movies</small>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-warning w-100" id="checkAgeBtn" onclick="checkAge()">Check your ages</button>
+                </div>
+                <div class="mb-3">
+                    <p class="text-center" id="ageResult">Input your age first before you go watch the movie</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="ifelse.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
