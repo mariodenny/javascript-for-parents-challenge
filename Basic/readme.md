@@ -8,4 +8,5 @@ They have to understand about frontend interaction
 6. let and const
 7. Understanding of using arithmetic operator
 8. understanind usage of object and structure and destructuring object
+9. understand if else and switch case and how , when to use it
 <small>Dont forget mention about , usually i call all the tag inside html to js as components(you can check that in all of my variable)</small>
