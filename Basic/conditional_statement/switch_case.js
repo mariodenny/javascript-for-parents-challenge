@@ -1,8 +1,8 @@
-console.log("Switch case")
-// take the dom 
+// take the dom globally 
 let sportInput = document.getElementById("sport")
 let sportResult = document.getElementById("sportResult")
 function checkBenefit(){
+    // because the function need to get value everytime, thats why we put it inside function
     let sport = sportInput.value
     switch(sport.toLowerCase()){
         case "badminton":
